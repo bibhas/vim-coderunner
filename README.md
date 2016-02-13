@@ -3,11 +3,13 @@ vim-coderunner
 
 What is the CodeRunner?
 > CodeRunner is the best way to write code on your Mac. You can run code in almost any language instantly, and you'll be surprised by the powerful set of features in such a lightweight and easy-to-use editor.
+> 
 > -- https://coderunnerapp.com
 
 This simple plugin aims to mimic that, and i have used some scripts from CodeRunner. //Salute
 
 Demo:
+
 [![gif with examples](https://raw.githubusercontent.com/0x84/vim-coderunner/master/demo.gif)](https://raw.githubusercontent.com/0x84/vim-coderunner/master/demo.gif)
 
 ## Languages supported
