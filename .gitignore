@@ -1,0 +1,15 @@
+screencast.txt
+demo.mov
+demo_out.gif
+doc/tags
+
+# test compiler
+test/c
+test/cpp
+test/Untitled.class
+test/c
+test/cpp
+test/objc
+test/objcpp
+test/swift
+

@@ -1,0 +1,85 @@
+*vim-coderunner*    Run code inline or on-the-fly
+
+Author:  Dylan <https://github.com/0x84/vim-coderunner>
+License: Same as Vi (see |license|)
+
+    |vim-coderunner-intro|           Introduction
+    |vim-coderunner-usage|           Usage
+    |vim-coderunner-commands|        Commands
+    |vim-coderunner-settings|        Settings
+
+==============================================================================
+INTRODUCTION                                    *vim-coderunner-intro*
+
+What is the CodeRunner?
+    CodeRunner is the best way to write code on your Mac. You can run code 
+    in almost any language instantly, and you'll be surprised by the powerful
+    set of features in such a lightweight and easy-to-use editor.
+    https://coderunnerapp.com
+
+This simple plugin aims to mimic that, and i have used some scripts from
+CodeRunner.
+
+==============================================================================
+USAGE                                           *vim-coderunner-usage*
+
+    nmap <leader>r      Run entire file (doesn't have to be saved)
+    vmap <leader>r      Run current or selected line(s)
+
+In MacVim, you can use ⌘R to run the code.
+
+==============================================================================
+COMMANDS                                        *vim-coderunner-commands*
+:RunCode [{language}]
+    Run entire file in {language}
+
+:AutoRun [{language}]
+    Enable/Disable AutoRun Mode by |BufWritePost|.
+
+==============================================================================
+SETTINGS                                        *vim-coderunner-settings*
+
+Currently vim-coderrunner supports:
+    - Go
+    - PHP
+    - Perl
+    - Ruby
+    - Python
+    - NodeJS
+    - Java
+    - Lua
+    - Bash
+    - Zsh
+    - Fish
+    - AppleScript (OS X only)
+    - Swift (OS X only)
+    - C (OS X only)
+    - C++ (OS X only)
+    - Objective-C/C++ (OS X only)
+
+And you can extend it by {g:vcr_languages}
+
+>
+    " Disable this plugin
+    let g:loaded_coderunner = 1
+
+    " Disable keymaps
+    let g:vcr_no_mappings = 1
+
+    let g:vcr_languages["py"] = g:vcr_languages["python"]
+
+    let g:vcr_languages["go"] = {
+        \ "cmd": "/goroot/bin/go",
+        \ "flags": "run",
+        \ "shebang": "package main",
+        \ "ext": "go"
+    \ }
+    let g:vcr_languages["objc"] = {
+        \ "compiler": "cpp.sh",
+        \ "compiler_flags": "-fobjc-arc -framework Foundation",
+        \ "cmd": "./$compiler",
+        \ "ext": "m"
+    \ }
+
+==============================================================================
+vim:tw=78:ts=8:ft=help:norl:
