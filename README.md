@@ -33,6 +33,12 @@ Demo:
 
 You can extend it, see `:help vim-coderunner-settings`
 
+## Installation
+
+You can use the [Vundle](/VundleVim/Vundle.Vim) to install:
+
+`BundleInstall 0x84/vim-coderunner`
+
 ## Usage
 
     nmap <leader>r      Run entire file (doesn't have to be saved)
