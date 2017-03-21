@@ -107,7 +107,7 @@ func! s:Execute(lang, fname)
     if has_key(a:lang, "compiler")
         let old_cmdheight=&cmdheight
         set cmdheight=5
-        let env = printf("cd %s;CR_FILENAME=%s CR_ENCODING=%s", shellescape(fnamemodify(a:fname, ":p:h")), shellescape(fnamemodify(a:fname, ":p:t")), get(a:lang, "enc", "UTF-8"))
+        let env = printf("command cd %s;CR_FILENAME=%s CR_ENCODING=%s", shellescape(fnamemodify(a:fname, ":p:h")), shellescape(fnamemodify(a:fname, ":p:t")), get(a:lang, "enc", "UTF-8"))
         let compiler = printf("%s %s/compiler/%s %s", env, s:rpath, a:lang["compiler"], get(a:lang, "compiler_flags", ""))
         echohl MoreMsg | echom "Compiler>> " . compiler | echohl None
         let compile_out = system(compiler)
