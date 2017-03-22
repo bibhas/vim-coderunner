@@ -84,7 +84,7 @@ if [ $noxcode = false ]; then
 		if [ $? -eq 69 ] && [ $lion = false ]; then
 			noxcode=true
 		else
-			xcrun clang++ -x c++ -fcolor-diagnostics -std=c++14 -stdlib=c++ -fobjc-call-cxx-cdtors -Wmicrosoft-template -fms-extensions -lc++ -o "$out" "${files[@]}" "${@:1}"
+			xcrun clang++ -x c++ -fcolor-diagnostics -std=c++14 -stdlib=libc++ -fobjc-call-cxx-cdtors -Wmicrosoft-template -fms-extensions -lc++ -o "$out" "${files[@]}" "${@:1}"
 			status=$?
 		fi
 	fi

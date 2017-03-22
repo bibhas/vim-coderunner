@@ -78,7 +78,7 @@ elif [ $s -ne 0 ]; then
 	exit $s
 fi
 
-xcrun clang++ -ObjC++ -lc++ -fcolor-diagnostics -std=c++14 -stdlib=c++ -fobjc-call-cxx-cdtors -Wmicrosoft-template -fms-extensions -o "$out" "${files[@]}" "${@:1}"
+xcrun clang++ -ObjC++ -lc++ -fcolor-diagnostics -std=c++14 -stdlib=libc++ -fobjc-call-cxx-cdtors -Wmicrosoft-template -fms-extensions -o "$out" "${files[@]}" "${@:1}"
 status=$?
 
 if [ $status -eq 0 ]; then
