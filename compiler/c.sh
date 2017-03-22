@@ -25,6 +25,8 @@
 CR_DEVELOPER_DIR=`dirname "$0"`
 ## END
 
+set TERM=xterm-256color
+
 lion=false
 if [ `sw_vers -productVersion | awk -F '.' '{print $1 "." $2}'` = "10.7" ]; then
 	lion=true
@@ -84,7 +86,7 @@ if [ $noxcode = false ]; then
 		if [ $? -eq 69 ] && [ $lion = false ]; then
 			noxcode=true
 		else
-			xcrun clang -o "$out" "${files[@]}" "${@:1}"
+			xcrun clang -fcolor-diagnostics -o "$out" "${files[@]}" "${@:1}"
 			status=$?
 		fi
 	fi

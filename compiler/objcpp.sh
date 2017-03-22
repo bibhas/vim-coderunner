@@ -25,6 +25,8 @@
 CR_DEVELOPER_DIR=`dirname "$0"`
 ## END
 
+set TERM=xterm-256color
+
 if [ ! -z $CR_SANDBOXED ]; then
 	echo -e "To run Objective-C++ code, you need to use the non-App Store version of CodeRunner, which is free for App Store customers.\n\nDownload the non-App Store version of CodeRunner at https://coderunnerapp.com/. You will also need Xcode to run Objective-C++ code, which can be downloaded from the Mac App Store."
 	exit 1

@@ -25,6 +25,8 @@
 CR_DEVELOPER_DIR=`dirname "$0"`
 ## END
 
+set TERM=xterm-256color
+
 lion=false
 if [ `sw_vers -productVersion | awk -F '.' '{print $1 "." $2}'` = "10.7" ]; then
 	lion=true
