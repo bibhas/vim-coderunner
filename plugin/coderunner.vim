@@ -19,6 +19,8 @@ if !exists("g:vcr_no_mappings")
 endif
 " }
 
+let g:ansi_escaped = 0
+
 " Funcs {
 func! s:Run(ranged, l1, l2, lang)
     let lang = s:findLanguage(a:lang)
@@ -146,10 +148,19 @@ func! s:Preview(content, cmd)
     wincmd P
     setl buftype=nofile noswapfile syntax=none bufhidden=delete
     normal ggdG
-
+    exec ":set nocursorline"
+    if g:ansi_escaped
+      echom "Rendering ansi..."
+      exec ":AnsiEsc!"
+    else
+      exec ":AnsiEsc"
+      let g:ansi_escaped = 1
+    endif
     " Write it into the window
     call append('^', split(a:content, "\n"))
-    nnoremap <buffer> <Esc> :pclose<CR>
+    normal gg
+    normal $
+    nnoremap <buffer> <leader><cr> :pclose<CR>
 endfunc
 
 
